@@ -4,6 +4,7 @@ var crypto = require('crypto');
 var express = require('express')
 var bodyParser = require('body-parser')
 
+require("dotenv").config()
 //CREAT FUNTION TO RANDOM SALT
 var genRandomString = function(length){
     return crypto.randomBytes(Math.ceil(length/2))
@@ -41,7 +42,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 var MongoClient = mongodb.MongoClient;
 
 //Connection URL
-var url = 'mongodb+srv://dbAI:OmXNOfIdJdInCW74@cluster0-oqj22.mongodb.net/cluster0-shard-00-00-oqj22.mongodb.net:27017?retryWrites=true&w=majority'
+var url =process.env.MONGO_URL
 //var url = 'mongodb://localhost:27017' //27017 is default or port
 
 MongoClient.connect(url,{useNewUrlParser: true},function(err,client){
