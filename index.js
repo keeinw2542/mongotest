@@ -126,8 +126,8 @@ MongoClient.connect(url,{useNewUrlParser: true},function(err,client){
         })
 
         //Start Web Server
-        app.listen(3000,()=>{
-            console.log('Connected to mongoDB Server ,Webservice runing on port 3000');
+        app.listen(process.env.PORT||3000,()=>{
+            console.log('Connected to mongoDB Server ,Webservice is runing');
         })
     }
 });
