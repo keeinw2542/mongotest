@@ -114,14 +114,14 @@ MongoClient.connect(url,{useNewUrlParser: true},function(err,client){
                                 if (hashed_password ==encrypted_password){
                                     response.json('Login success');
                                     console.log('Login suscess');
-                                    app.post('/response',(response,next)=>{
+                                    app.get('/response',(response,next)=>{
                                         response.json('Login success');
                                     })
                                 }
                                 else {
                                     response.json('worng password');
                                     console.log('worng password');
-                                    app.post('/response',(response,next)=>{
+                                    app.get('/response',(response,next)=>{
                                         response.json('worng success');
                                     })
                                 }
