@@ -146,8 +146,8 @@ MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
             var insertJson = {
                 'numberfile': numberfile,
                 'info1': info1,
-                'info1': info2,
-                'info1': info3
+                'info2': info2,
+                'info3': info3
             };
             //Insert data 
             db.collection('keeinw')
