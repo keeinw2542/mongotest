@@ -138,19 +138,13 @@ MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
 
             var db = client.db('keetest');
 
-            //Check exist email
-            db.collection('keeinw')
-                .count(function (err, number) {
-                    numberfile = number
-                })
             var insertJson = {
-                'numberfile': numberfile,
                 'info1': info1,
                 'info2': info2,
                 'info3': info3
             };
             //Insert data 
-            db.collection('keeinw')
+            db.collection(username)
                 .insertOne(insertJson, function (err, res) {
                     response.json('Add success');
                     console.log('Add suscess');
