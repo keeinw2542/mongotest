@@ -143,12 +143,20 @@ MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
                 'info2': info2,
                 'info3': info3
             };
-            //Insert data 
-            db.collection(username)
+            if(username=="keeinw"){
+                //Insert data 
+                db.collection(username)
                 .insertOne(insertJson, function (err, res) {
                     response.json('Add success');
                     console.log('Add suscess');
                 })
+            }
+            else{
+                response.json('Add fail');
+                console.log('Add fail');
+            }
+            
+            
         })
         //Start Web Server
         app.listen(process.env.PORT || 3000, () => {
