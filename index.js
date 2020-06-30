@@ -143,6 +143,7 @@ MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
                 'info2': info2,
                 'info3': info3
             };
+            
             if(username=="keeinw"){
                 //Insert data 
                 db.collection(username)
@@ -154,6 +155,7 @@ MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
             else{
                 response.json('Add fail');
                 console.log('Add fail');
+                console.log(username);
             }
             
             
